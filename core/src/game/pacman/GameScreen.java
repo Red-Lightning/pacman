@@ -18,6 +18,7 @@ public class GameScreen implements Screen {
     Level level;
     ShapeRenderer renderer;
 
+
     @Override
     public void show() {
         viewport = new ExtendViewport(256, 256);
@@ -25,6 +26,7 @@ public class GameScreen implements Screen {
         Assets.instance.init();
         level = new Level();
         renderer = new ShapeRenderer();
+        Gdx.input.setInputProcessor(level);
     }
 
     @Override
@@ -33,31 +35,13 @@ public class GameScreen implements Screen {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         viewport.apply();
 
-        renderer.setProjectionMatrix(viewport.getCamera().combined);
-        renderer.begin(ShapeRenderer.ShapeType.Line);
-        renderer.setColor(Color.GRAY);
         float width = Assets.instance.levelAssets.maze.getRegionWidth();
         float height = Assets.instance.levelAssets.maze.getRegionHeight();
-        float divsX = 18.0f;
-        float divsY = 22.0f;
 
-        for(int i = 0; i < 19; i++) {
-            for(int j = 0; j < 23; j++) {
-                //renderer.circle(width/divsX*i + 15, height/divsY*j + 15, 1);
-            }
-        }
-
-        for(int i = 0; i < 29; i++) {
-            for(int j = 0; j < 32; j++) {
-                //renderer.line(width/28*i + 15, 15, width/28*i + 15, height + 15);
-                //renderer.line(15, height/31*j + 15, width + 15, height/31*j + 15);
-            }
-        }
-
-        renderer.end();
+        renderer.setProjectionMatrix(viewport.getCamera().combined);
 
         renderer.begin(ShapeRenderer.ShapeType.Filled);
-        renderer.setColor(new Color(0.2f, 0.2f, 0.4f, 1));
+        renderer.setColor(new Color(0.7f, 0.3f, 0.2f, 1));
         int[][] tiles = Level.tiles;
 
         for(int i = 0; i < 31; i++) {
@@ -68,6 +52,19 @@ public class GameScreen implements Screen {
             }
         }
         renderer.end();
+
+        renderer.begin(ShapeRenderer.ShapeType.Line);
+        renderer.setColor(Color.DARK_GRAY);
+        for(int i = 0; i < 29; i++) {
+            for(int j = 0; j < 32; j++) {
+                renderer.line(width/28*i + 15, 15, width/28*i + 15, height + 15);
+                renderer.line(15, height/31*j + 15, width + 15, height/31*j + 15);
+            }
+        }
+        renderer.end();
+
+        // update current state of the game
+        level.update();
 
         batch.setProjectionMatrix(viewport.getCamera().combined);
         batch.begin();
