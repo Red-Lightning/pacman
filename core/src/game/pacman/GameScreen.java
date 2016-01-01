@@ -61,6 +61,9 @@ public class GameScreen implements Screen {
                 renderer.line(15, height/31*j + 15, width + 15, height/31*j + 15);
             }
         }
+
+        level.renderBoundingBox(renderer);
+
         renderer.end();
 
         // update current state of the game

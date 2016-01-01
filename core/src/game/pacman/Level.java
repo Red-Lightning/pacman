@@ -59,19 +59,42 @@ public class Level extends InputAdapter {
         moveState = MoveState.STATIONARY;
     }
 
+    /* Helper methods for checking valid move locations */
     private boolean canMoveRight() {
         int[] loc = pacman.getLoc();
         if(tiles[loc[0]][loc[1]+1] != 0 && loc[1]+1 < Constants.MAZE_LENGTH) return true;
         return false;
     }
 
+    private boolean canMoveUp() {
+        int[] loc = pacman.getLoc();
+        if(tiles[loc[0]-1][loc[1]] != 0 && loc[0] - 1 >= 0) return true;
+        return false;
+    }
+
+    private boolean canMoveDown() {
+        int[] loc = pacman.getLoc();
+        if(tiles[loc[0]+1][loc[1]] != 0 && loc[0]+1 < Constants.MAZE_HEIGHT) return true;
+        return false;
+    }
+
+    private boolean canMoveLeft() {
+        int[] loc = pacman.getLoc();
+        if(tiles[loc[0]][loc[1]-1] != 0) return true;
+        return false;
+    }
+
+    /* Update game state */
     public void update() {
         switch (moveState) {
             case UP:
+                if(canMoveUp()) { pacman.moveUp(); }
                 break;
             case DOWN:
+                if(canMoveDown()) { pacman.moveDown(); }
                 break;
             case LEFT:
+                if(canMoveLeft()) { pacman.moveLeft(); }
                 break;
             case RIGHT:
                 if(canMoveRight()) { pacman.moveRight(); }
@@ -84,12 +107,25 @@ public class Level extends InputAdapter {
     @Override
     public boolean keyDown(int keycode) {
         if(keycode == Input.Keys.RIGHT) {
-            if( canMoveRight() ) {
-                moveState = MoveState.RIGHT;
-                Gdx.app.log("Key Press", "Functioning as intended!");
-            }
+            if( canMoveRight() ) { moveState = MoveState.RIGHT; }
+            return true;
         }
-        return true;
+
+        if(keycode == Input.Keys.UP) {
+            if( canMoveUp() ) { moveState = MoveState.UP; }
+            return true;
+        }
+
+        if(keycode == Input.Keys.DOWN) {
+            if( canMoveDown() ) { moveState = MoveState.DOWN; }
+            return true;
+        }
+
+        if(keycode == Input.Keys.LEFT) {
+            if( canMoveLeft() ) { moveState = MoveState.LEFT; }
+            return true;
+        }
+        return false;
     }
 
     public void render(SpriteBatch batch) {
@@ -111,6 +147,10 @@ public class Level extends InputAdapter {
 
         pacman.update();
         pacman.render(batch);
+    }
+
+    public void renderBoundingBox(ShapeRenderer renderer) {
+        pacman.renderBoundingBox(renderer);
     }
 
 
