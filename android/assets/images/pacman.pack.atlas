@@ -1,0 +1,216 @@
+
+pacman.pack.png
+size: 512,256
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+blinky-down
+  rotate: false
+  xy: 228, 240
+  size: 14, 14
+  orig: 14, 14
+  offset: 0, 0
+  index: -1
+blinky-left
+  rotate: false
+  xy: 228, 224
+  size: 14, 14
+  orig: 14, 14
+  offset: 0, 0
+  index: -1
+blinky-right
+  rotate: false
+  xy: 244, 240
+  size: 14, 14
+  orig: 14, 14
+  offset: 0, 0
+  index: -1
+blinky-up
+  rotate: false
+  xy: 228, 208
+  size: 14, 14
+  orig: 14, 14
+  offset: 0, 0
+  index: -1
+cherry
+  rotate: false
+  xy: 338, 242
+  size: 12, 12
+  orig: 12, 12
+  offset: 0, 0
+  index: -1
+clyde-down
+  rotate: false
+  xy: 244, 224
+  size: 14, 14
+  orig: 14, 14
+  offset: 0, 0
+  index: -1
+clyde-left
+  rotate: false
+  xy: 260, 240
+  size: 14, 14
+  orig: 14, 14
+  offset: 0, 0
+  index: -1
+clyde-right
+  rotate: false
+  xy: 228, 192
+  size: 14, 14
+  orig: 14, 14
+  offset: 0, 0
+  index: -1
+clyde-up
+  rotate: false
+  xy: 244, 208
+  size: 14, 14
+  orig: 14, 14
+  offset: 0, 0
+  index: -1
+ghost
+  rotate: false
+  xy: 260, 224
+  size: 14, 14
+  orig: 14, 14
+  offset: 0, 0
+  index: -1
+inky-down
+  rotate: false
+  xy: 276, 240
+  size: 14, 14
+  orig: 14, 14
+  offset: 0, 0
+  index: -1
+inky-left
+  rotate: false
+  xy: 228, 176
+  size: 14, 14
+  orig: 14, 14
+  offset: 0, 0
+  index: -1
+inky-right
+  rotate: false
+  xy: 244, 192
+  size: 14, 14
+  orig: 14, 14
+  offset: 0, 0
+  index: -1
+inky-up
+  rotate: false
+  xy: 260, 208
+  size: 14, 14
+  orig: 14, 14
+  offset: 0, 0
+  index: -1
+maze
+  rotate: false
+  xy: 2, 6
+  size: 224, 248
+  orig: 224, 248
+  offset: 0, 0
+  index: -1
+pacman0
+  rotate: false
+  xy: 260, 193
+  size: 13, 13
+  orig: 13, 13
+  offset: 0, 0
+  index: -1
+pacman1-down
+  rotate: false
+  xy: 276, 209
+  size: 13, 13
+  orig: 13, 13
+  offset: 0, 0
+  index: -1
+pacman1-left
+  rotate: false
+  xy: 292, 225
+  size: 13, 13
+  orig: 13, 13
+  offset: 0, 0
+  index: -1
+pacman1-right
+  rotate: false
+  xy: 308, 241
+  size: 13, 13
+  orig: 13, 13
+  offset: 0, 0
+  index: -1
+pacman1-up
+  rotate: false
+  xy: 228, 145
+  size: 13, 13
+  orig: 13, 13
+  offset: 0, 0
+  index: -1
+pacman2-down
+  rotate: false
+  xy: 244, 161
+  size: 13, 13
+  orig: 13, 13
+  offset: 0, 0
+  index: -1
+pacman2-left
+  rotate: false
+  xy: 260, 178
+  size: 13, 13
+  orig: 13, 13
+  offset: 0, 0
+  index: -1
+pacman2-right
+  rotate: false
+  xy: 323, 241
+  size: 13, 13
+  orig: 13, 13
+  offset: 0, 0
+  index: -1
+pacman2-up
+  rotate: false
+  xy: 228, 130
+  size: 13, 13
+  orig: 13, 13
+  offset: 0, 0
+  index: -1
+pinky-down
+  rotate: false
+  xy: 276, 224
+  size: 14, 14
+  orig: 14, 14
+  offset: 0, 0
+  index: -1
+pinky-left
+  rotate: false
+  xy: 292, 240
+  size: 14, 14
+  orig: 14, 14
+  offset: 0, 0
+  index: -1
+pinky-right
+  rotate: false
+  xy: 228, 160
+  size: 14, 14
+  orig: 14, 14
+  offset: 0, 0
+  index: -1
+pinky-up
+  rotate: false
+  xy: 244, 176
+  size: 14, 14
+  orig: 14, 14
+  offset: 0, 0
+  index: -1
+point
+  rotate: false
+  xy: 2, 2
+  size: 2, 2
+  orig: 2, 2
+  offset: 0, 0
+  index: -1
+powerup
+  rotate: false
+  xy: 228, 120
+  size: 8, 8
+  orig: 8, 8
+  offset: 0, 0
+  index: -1
