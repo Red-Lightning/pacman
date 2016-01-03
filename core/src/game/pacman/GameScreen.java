@@ -7,8 +7,10 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
+import com.badlogic.gdx.utils.viewport.FitViewport;
 
 import util.Assets;
+import util.Constants;
 
 
 public class GameScreen implements Screen {
@@ -35,8 +37,8 @@ public class GameScreen implements Screen {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         viewport.apply();
 
-        float width = Assets.instance.levelAssets.maze.getRegionWidth();
-        float height = Assets.instance.levelAssets.maze.getRegionHeight();
+        float width = Constants.WIDTH;
+        float height = Constants.HEIGHT;
 
         renderer.setProjectionMatrix(viewport.getCamera().combined);
 
@@ -47,7 +49,7 @@ public class GameScreen implements Screen {
         for(int i = 0; i < 31; i++) {
             for(int j = 0; j < 28; j++) {
                 if( tiles[i][j] == 1 ) {
-                    renderer.rect(width/28*j + 15, 15 + height - height/31*(i+1), width/28, height/31);
+                    renderer.rect(width/28*j + 15, 15 + height/31*(30-i), width/28, height/31);
                 }
             }
         }
@@ -55,8 +57,8 @@ public class GameScreen implements Screen {
 
         renderer.begin(ShapeRenderer.ShapeType.Line);
         renderer.setColor(Color.DARK_GRAY);
-        for(int i = 0; i < 29; i++) {
-            for(int j = 0; j < 32; j++) {
+        for(int i = 0; i < 28; i++) {
+            for(int j = 0; j < 31; j++) {
                 renderer.line(width/28*i + 15, 15, width/28*i + 15, height + 15);
                 renderer.line(15, height/31*j + 15, width + 15, height/31*j + 15);
             }
